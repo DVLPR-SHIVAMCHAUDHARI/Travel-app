@@ -25,9 +25,8 @@ class _OnboardingscreenState extends State<Onboardingscreen> {
         duration: Duration(milliseconds: 300),
         curve: Curves.easeInOut,
       );
-      if (_currentPage == 2) {
-        GoRouter.of(context).goNamed(Routes.onboard2.name);
-      }
+    } else {
+      GoRouter.of(context).goNamed(Routes.onboard2.name);
     }
   }
 

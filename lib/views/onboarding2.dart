@@ -53,7 +53,7 @@ class _Onboarding2State extends State<Onboarding2> {
                   onTap: () {
                     selectedindex = index;
                     setState(() {
-                      Future.delayed(Duration(seconds: 1), () {
+                      Future.delayed(Duration(microseconds: 20), () {
                         GoRouter.of(context).goNamed(Routes.login.name);
                       });
                     });

@@ -42,6 +42,8 @@ dependencies:
   gif: ^2.3.0
   smooth_page_indicator: ^1.2.0+3
   pinput: ^5.0.0
+  flutter_rating: ^2.0.2
+  velocity_x: ^4.2.1
 
 dev_dependencies:
   flutter_test:
@@ -92,6 +94,9 @@ flutter:
     - family: manropeRegular
       fonts: 
         - asset: assets/fonts/Manrope-Regular.ttf
+    - family: interRegular
+      fonts: 
+        - asset: assets/fonts/Inter_28pt-Regular.ttf
         
   
   #
