@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
+import 'package:travel/consts/home.dart';
 import 'package:travel/views/auth/loginScreen.dart';
 import 'package:travel/views/auth/otpscreen.dart';
 import 'package:travel/views/homeScreen.dart';
@@ -44,7 +45,7 @@ GoRouter router = GoRouter(routes: [
   GoRoute(
     path: "/home",
     name: Routes.home.name,
-    builder: (context, state) => Homescreen(),
+    builder: (context, state) => Home(),
   ),
 ]);
 

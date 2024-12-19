@@ -5,6 +5,8 @@ class Asseturl {
   static String onboarding1 = "assets/images/onboardongimage1.png";
   static String onboarding2 = "assets/images/onboardongimage2.png";
   static String onboarding3 = "assets/images/onboardongimage3.png";
+  static String offerimage1 = "assets/images/offerimage1.png";
+  static String offerimage2 = "assets/images/offerimage2.png";
   static String igparis = "assets/images/parisimg.png";
   static String igbeach = "assets/images/beach.png";
   static String igmaldives = "assets/images/Maldives.png";
@@ -22,13 +24,21 @@ class Asseturl {
   static String fbicon = "assets/icons/fb.svg";
   static String apple = "assets/icons/apple.svg";
   static String flight = "assets/icons/flight.svg";
+  static String flight2 = "assets/icons/flight2.svg";
   static String package = "assets/icons/packages.svg";
   static String hotels = "assets/icons/hotels.svg";
+  static String hotel = "assets/icons/hotel.svg";
   static String rentalcar = "assets/icons/rentalcar.svg";
   static String train = "assets/icons/train.svg";
   static String discount = "assets/icons/discount.svg";
   static String thingstodo = "assets/icons/thingstodo.svg";
+  static String thingstodo2 = "assets/icons/thingtodo.svg";
   static String restaurants = "assets/icons/restaurants.svg";
   static String icAiplanner = "assets/icons/aiplanner.svg";
+  static String icexplore = "assets/icons/explore.svg";
+  static String ichome = "assets/icons/home.svg";
+  static String icnews = "assets/icons/news.svg";
+  static String icholiday = "assets/icons/holiday2.svg";
+  static String icfood = "assets/icons/food.svg";
   static String gifTravel = "assets/gifs/travel.gif";
 }

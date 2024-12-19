@@ -1,3 +1,4 @@
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,6 +16,46 @@ class Category {
 
   Category({this.title, this.icon});
 }
+
+class Specialofferclass {
+  String? image;
+  String? icon;
+  String? title;
+  String? text1;
+  String? text2;
+  String? text3;
+  String? text4;
+
+  Specialofferclass(
+      {this.icon,
+      this.image,
+      this.text1,
+      this.text2,
+      this.text3,
+      this.text4,
+      this.title});
+}
+
+List<Specialofferclass> offerOfferList = [
+  Specialofferclass(
+    icon: Asseturl.flight2,
+    image: Asseturl.offerimage1,
+    title: "New User Offer",
+    text2: "Sign up & enjoy a discount on your first flight booking with us!",
+    text3: "ACEFIRST",
+    text4: "30th Nov, 2024",
+    text1: "Flights",
+  ),
+  Specialofferclass(
+    icon: Asseturl.icholiday,
+    image: Asseturl.offerimage2,
+    title: "New User Offer",
+    text2: "Sign up & enjoy a discount on your first flight booking with us!",
+    text3: "ACEFIRST",
+    text4: "30th Nov, 2024",
+    text1: "Holidays",
+  )
+];
 
 List<Category> Categorylist = [
   Category(
@@ -83,7 +124,7 @@ class Homescreen extends StatefulWidget {
 }
 
 class _HomescreenState extends State<Homescreen> {
-  int selectedSpecialofferindex = -1;
+  int selectedSpecialofferindex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -148,6 +189,8 @@ class _HomescreenState extends State<Homescreen> {
                 decoration: InputDecoration(
                   filled: true,
                   fillColor: Colors.white,
+                  enabledBorder:
+                      OutlineInputBorder(borderSide: BorderSide.none),
                   focusedBorder: OutlineInputBorder(
                       borderSide: BorderSide(color: Colors.white)),
                   border: OutlineInputBorder(
@@ -780,6 +823,168 @@ class _HomescreenState extends State<Homescreen> {
                                 borderRadius: BorderRadius.circular(5.r)),
                             child: Center(
                                 child: Text(specialoffers[index].title!))),
+                      );
+                    },
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 22.h,
+              ),
+              SizedBox(
+                height: 220.h,
+                width: double.infinity,
+                child: ListView(
+                  scrollDirection: Axis.horizontal,
+                  shrinkWrap: true,
+                  children: List.generate(
+                    2,
+                    (index) {
+                      return Container(
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(16.r)),
+                        margin: EdgeInsets.only(right: 7.w),
+                        height: 220.h,
+                        width: 171.w,
+                        child: Stack(
+                          children: [
+                            SizedBox(
+                                width: 171.w,
+                                height: 89.h,
+                                child: Image.asset(
+                                  offerOfferList[index].image!,
+                                  fit: BoxFit.cover,
+                                )),
+                            Positioned(
+                              top: 100.h,
+                              left: 10.w,
+                              child: Text(
+                                offerOfferList[index].title!,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: Typo.inter_Regular,
+                                    fontWeight: FontWeight.w600,
+                                    fontSize: 14.sp),
+                              ),
+                            ),
+                            Positioned(
+                              top: 119.h,
+                              left: 10.w,
+                              right: 6.w,
+                              bottom: 67.h,
+                              child: Text(
+                                offerOfferList[index].text2!,
+                                style: TextStyle(
+                                    color: Colors.black,
+                                    fontFamily: Typo.inter_Regular,
+                                    fontSize: 10.sp),
+                              ),
+                            ),
+                            Positioned(
+                              top: 78.h,
+                              right: 11.w,
+                              child: Container(
+                                padding: EdgeInsets.only(
+                                    bottom: 3.h,
+                                    top: 4.h,
+                                    left: 5.w,
+                                    right: 8.w),
+                                // width: 63.w,
+                                height: 18.h,
+                                decoration: BoxDecoration(
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(50.r)),
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    CircleAvatar(
+                                        radius: 5.5.r,
+                                        backgroundColor: Colors.blue,
+                                        child: SvgPicture.asset(
+                                          offerOfferList[index].icon!,
+                                          fit: BoxFit.cover,
+                                          height: 11.h,
+                                          width: 11.w,
+                                        )),
+                                    SizedBox(
+                                      width: 8.w,
+                                    ),
+                                    Text(
+                                      offerOfferList[index].text1!,
+                                      style: TextStyle(
+                                          color: Colors.black,
+                                          fontFamily: Typo.inter_Regular,
+                                          fontSize: 10.sp),
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Positioned(
+                              top: 161.h,
+                              bottom: 34.h,
+                              left: 10.w,
+                              right: 13.w,
+                              child: Container(
+                                color: Color(0xffEDF5FA),
+                                width: 148.w,
+                                height: 25.h,
+                                child: DottedBorder(
+                                    padding: EdgeInsets.symmetric(
+                                        vertical: 5.h, horizontal: 8.w),
+                                    radius: Radius.circular(5.r),
+                                    borderType: BorderType.RRect,
+                                    color: Colors.blue,
+                                    child: Row(
+                                      children: [
+                                        Text(
+                                          "Use Code:",
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontFamily: Typo.inter_Regular,
+                                              fontSize: 10.sp),
+                                        ),
+                                        SizedBox(
+                                          width: 12.w,
+                                        ),
+                                        Text(
+                                          offerOfferList[index].text3!,
+                                          style: TextStyle(
+                                              color: Colors.black,
+                                              fontFamily: Typo.inter_Regular,
+                                              fontSize: 10.sp),
+                                        )
+                                      ],
+                                    )),
+                              ),
+                            ),
+                            Positioned(
+                              top: 196.h,
+                              left: 10.w,
+                              child: Row(
+                                children: [
+                                  Text(
+                                    "Valid till: ",
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontFamily: Typo.inter_Regular,
+                                        fontSize: 10.sp),
+                                  ),
+                                  Text(
+                                    offerOfferList[index].text4!,
+                                    style: TextStyle(
+                                        color: Colors.black,
+                                        fontFamily: Typo.inter_Regular,
+                                        fontSize: 10.sp),
+                                  )
+                                ],
+                              ),
+                            ),
+                          ],
+                        ),
                       );
                     },
                   ),
